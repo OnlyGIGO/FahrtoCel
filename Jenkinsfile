@@ -13,12 +13,12 @@ pipeline {
  }
  stage('Build') {
  steps {
- bat "${env.MAVEN_HOME}bin\\mvn clean install"
+ bat "${env.MAVEN_HOME}bin\\mvn.exe clean install"
  }
  }
  stage('Test') {
  steps{
- bat "${env.MAVEN_HOME}bin\\mvn test"
+ bat "${env.MAVEN_HOME}bin\\mvn.exe test"
  }
  post {
  success {
