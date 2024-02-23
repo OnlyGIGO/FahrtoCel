@@ -1,6 +1,9 @@
 pipeline {
  agent any
-
+ environment {
+    MAVEN_HOME = tool 'maven 3.9.6'
+    JAVA_HOME = tool 'jdk-17'
+ }
 
  stages {
  stage('Checkout') {
@@ -10,12 +13,12 @@ pipeline {
  }
  stage('Build') {
  steps {
- bat "mvn clean install"
+ bat "${env.MAVEN_HOME}bin\\mvn.cmd clean install"
  }
  }
  stage('Test') {
  steps{
- bat "mvn test"
+ bat "${env.MAVEN_HOME}bin\\mvn.cmd test"
  }
  post {
  success {
