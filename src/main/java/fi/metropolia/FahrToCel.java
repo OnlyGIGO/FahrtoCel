@@ -12,4 +12,7 @@ public class FahrToCel
    public static float kelvintoCel(float kel){
       return (float) (kel-273.15);
    }
+   public static float kelvinToFahr(float kel){
+      return ((kel-273.15f) * (9/5f) + 32f);
+   }
 }
